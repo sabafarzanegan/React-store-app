@@ -1,5 +1,5 @@
 function Register() {
-  return <div>SingleProduct</div>;
+  return <div>register</div>;
 }
 
 export default Register;
