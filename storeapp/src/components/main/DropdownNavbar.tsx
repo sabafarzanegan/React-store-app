@@ -25,12 +25,12 @@ function DropdownNavbar({ navlinks }: props) {
           <FaBarsStaggered />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="w-56 rtl:ml-0 ">
         <DropdownMenuLabel className="text-right">منو</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           {navlinks.map((link) => (
-            <DropdownMenuItem className="w-full ">
+            <DropdownMenuItem className="w-full  ">
               <DropdownMenuShortcut className=""></DropdownMenuShortcut>
               <Link to={link.path} className="">
                 {link.name}

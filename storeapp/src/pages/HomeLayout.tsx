@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 function HomeLayout() {
   return (
     <>
-      <div className="container mx-auto px-2">
+      <div className="container  mx-auto px-6">
         <Header />
         <Outlet />
       </div>

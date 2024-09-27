@@ -29,8 +29,8 @@ function Navbar() {
 
   return (
     <nav
-      className={`flex items-center justify-between z-50 py-6 px-4 ${
-        location.pathname === "/" ? "text-gray-100 " : ""
+      className={`flex items-center justify-between z-50 py-6  ${
+        location.pathname === "/" ? "text-gray-100 px-6" : ""
       } `}>
       {/* cart bascket and theme toggle */}
       <div className="flex items-center gap-x-3">
