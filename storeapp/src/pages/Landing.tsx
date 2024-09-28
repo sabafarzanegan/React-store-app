@@ -1,11 +1,11 @@
 import HeroCarousel from "@/components/main/Carousel";
 import Navbar from "@/components/main/Navbar";
+import WhyChoosing from "@/components/main/WhyChoosing";
 
 function Landing() {
   return (
     <>
-      {/* پس‌زمینه با ارتفاع کامل صفحه */}
-      <div className="bg-hero absolute top-0 right-0 h-screen w-full z-0">
+      <div className="bg-hero absolute top-0 right-0 h-screen w-full z-30 ">
         <Navbar />
         <section className="flex items-center justify-center h-full">
           <h2 className="flex flex-col items-center text-white px-4 md:px-0 space-y-4">
@@ -18,15 +18,16 @@ function Landing() {
             </span>
           </h2>
         </section>
+        <div className="absolute top-0 right-0 h-full w-full bg-gray-600/60 opacity-50 -z-30"></div>
       </div>
 
-      {/* محتوای اضافی که با اسکرول نمایش داده می‌شود */}
-      <div className=" z-10 px-6 mb-6">
+      <div className=" z-10 px-6 mb-6 space-y-8">
         <div className="h-screen flex items-center justify-between gap-x-4">
           <h1 className="text-2xl"></h1>
         </div>
+        <WhyChoosing />
         <div className=" flex items-center justify-between w-full flex-wrap-reverse gap-y-3">
-          <div className=" text-base md:text-4xl font-bold  flex items-center justify-center">
+          <div className=" text-base md:text-4xl font-bold  flex items-center justify-center text-secondary">
             <p>فضای داخلی خود را مینیمال و مدرن تر کنید</p>
           </div>
           <HeroCarousel />

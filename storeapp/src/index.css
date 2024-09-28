@@ -12,7 +12,7 @@
     --popover-foreground: 240 10% 3.9%;
     --primary: 35 86% 48%;
     --primary-foreground: 35 8.6% 4.8%;
-    --secondary: 35 43% 14.399999999999999%;
+    --secondary: 0 0% 12%;
     --secondary-foreground: 35 8.6% 97.4%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
@@ -77,4 +77,5 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: 0 10px 30px rgba(102, 100, 100, 0.5);
 }
