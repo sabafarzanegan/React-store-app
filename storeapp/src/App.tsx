@@ -13,6 +13,8 @@ import {
   Checkout,
   Orders,
 } from "./pages";
+import { Loader as LandingLoader } from "./pages/Landing";
+import { Loader as ProductLoader } from "./pages/Products";
 
 function App() {
   const router = createBrowserRouter([
@@ -24,8 +26,9 @@ function App() {
         {
           index: true,
           element: <Landing />,
+          loader: LandingLoader,
         },
-        { path: "products", element: <Products /> },
+        { path: "products", element: <Products />, loader: ProductLoader },
         { path: "products/:id", element: <SingleProduct /> },
         { path: "cart", element: <Cart /> },
         { path: "about", element: <About /> },

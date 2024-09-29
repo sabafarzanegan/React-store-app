@@ -19,26 +19,28 @@ const carouselImages: CarouselImages[] = [
 ];
 function HeroCarousel() {
   return (
-    <Carousel className="max-w-[400px]" dir="ltr">
-      <CarouselContent>
+    <Carousel
+      dir="ltr"
+      opts={{
+        align: "start",
+        loop: true,
+      }}
+      className="w-full ">
+      <CarouselContent className="w-full mx-auto">
         {carouselImages.map((item, index) => (
-          <CarouselItem key={index}>
-            <div className="">
-              <Card className="border-gray-400">
-                <CardContent className=" border-white flex aspect-square items-center justify-center w-full p-0 ">
-                  <img
-                    src={item.img}
-                    alt=""
-                    className="h-full w-full rounded-md p-4 overflow-hidden"
-                  />
+          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <img src={item.img} alt="" className="w-[80%] h-[80%]" />
                 </CardContent>
               </Card>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselNext />
       <CarouselPrevious />
+      <CarouselNext />
     </Carousel>
   );
 }
