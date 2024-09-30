@@ -38,3 +38,15 @@ export type ProductResponse = {
   data: Product[];
   meta: ProductsMeta;
 };
+
+export type params = {
+  search?: string;
+  category?: string;
+  company?: string;
+  order?: string;
+  price?: string;
+  page?: number;
+  shipping?: string;
+};
+
+export type productRespobseWithParams = ProductResponse & { params: params };
