@@ -5,7 +5,6 @@ import { ProductResponse } from "@/lib/Types";
 import { type LoaderFunction } from "react-router-dom";
 export const Loader: LoaderFunction = async (): Promise<ProductResponse> => {
   const response = await customFetch<ProductResponse>("/products");
-  console.log("products page", response.data);
 
   return { ...response.data };
 };

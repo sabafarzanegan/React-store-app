@@ -9,7 +9,6 @@ import { Separator } from "../ui/separator";
 function ProductContainer() {
   const [Layout, setLayout] = useState<"grid" | "list">("grid");
   const { meta } = useLoaderData() as ProductResponse;
-  console.log(meta);
 
   return (
     <div>

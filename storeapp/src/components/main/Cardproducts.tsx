@@ -48,7 +48,7 @@ function Cardproducts({ item, layout }: PropsProduct) {
             </span>
           </div>
           {layout === "grid" && (
-            <Button className="font-semibold  text-white">خرید</Button>
+            <Button className="font-semibold  text-white px-10">خرید</Button>
           )}
         </div>
       </div>

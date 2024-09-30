@@ -32,6 +32,7 @@ function Landing() {
 
       <div className=" z-10 px-6 mb-6 space-y-8">
         <div className="h-screen flex items-center justify-between gap-x-4">
+          cks
           <h1 className="text-2xl"></h1>
         </div>
         <WhyChoosing />

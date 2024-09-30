@@ -5,8 +5,6 @@ type prop = {
   layout: "grid" | "list";
 };
 function Productsection({ layout }: prop) {
-  console.log(layout);
-
   const { data } = useLoaderData() as ProductResponse;
   return (
     <>
