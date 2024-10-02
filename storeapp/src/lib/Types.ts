@@ -50,3 +50,8 @@ export type params = {
 };
 
 export type productRespobseWithParams = ProductResponse & { params: params };
+
+export type singleproduct = {
+  data: Product;
+  meta: {};
+};

@@ -35,7 +35,7 @@ function PaginationContainer() {
   });
   if (pageCount < 2) return null;
   return (
-    <Pagination>
+    <Pagination className="py-10">
       <PaginationContent>
         <PaginationItem>
           <PaginationNext to={nextUrl} />

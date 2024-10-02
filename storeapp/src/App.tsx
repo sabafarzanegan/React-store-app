@@ -15,6 +15,7 @@ import {
 } from "./pages";
 import { Loader as LandingLoader } from "./pages/Landing";
 import { Loader as ProductLoader } from "./pages/Products";
+import { Loader as Singleproduct } from "./pages/SingleProduct";
 
 function App() {
   const router = createBrowserRouter([
@@ -29,7 +30,11 @@ function App() {
           loader: LandingLoader,
         },
         { path: "products", element: <Products />, loader: ProductLoader },
-        { path: "products/:id", element: <SingleProduct /> },
+        {
+          path: "products/:id",
+          element: <SingleProduct />,
+          loader: Singleproduct,
+        },
         { path: "cart", element: <Cart /> },
         { path: "about", element: <About /> },
         { path: "landing", element: <Landing /> },

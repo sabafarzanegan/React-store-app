@@ -8,7 +8,7 @@ import FormRange from "./FormRange";
 import Formcheck from "./Formcheck";
 function Filter() {
   const { meta, params } = useLoaderData() as productRespobseWithParams;
-  const { search, category, company, order, price, shipping } = params;
+  const { search, category, company, price, shipping } = params;
   console.log(shipping);
 
   return (
