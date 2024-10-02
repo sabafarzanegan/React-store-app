@@ -46,7 +46,7 @@ export type params = {
   order?: string;
   price?: string;
   page?: number;
-  shipping?: string;
+  shipping?: boolean;
 };
 
 export type productRespobseWithParams = ProductResponse & { params: params };

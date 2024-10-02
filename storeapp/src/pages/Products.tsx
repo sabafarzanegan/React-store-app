@@ -1,4 +1,5 @@
 import Filter from "@/components/main/Filter";
+import PaginationContainer from "@/components/main/PaginationContainer";
 import ProductContainer from "@/components/main/ProductContainer";
 
 import { customFetch } from "@/lib/Customfetch";
@@ -23,6 +24,7 @@ function Products() {
       <section className="space-y-10">
         <Filter />
         <ProductContainer />
+        <PaginationContainer />
       </section>
     </>
   );
