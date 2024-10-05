@@ -55,3 +55,23 @@ export type singleproduct = {
   data: Product;
   meta: {};
 };
+
+export type cartItem = {
+  cartId: string;
+  productId: number;
+  title: string;
+  image: string;
+  price: number;
+  productColor: string;
+  amount: number;
+  company: string;
+};
+
+export type cartState = {
+  cartItem: cartItem[];
+  cartTotal: number;
+  numItemsIncart: number;
+  tax: number;
+  shipping: number;
+  orderTotal: number;
+};

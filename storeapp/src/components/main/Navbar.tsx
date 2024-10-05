@@ -6,6 +6,7 @@ import Themetoggle from "./Themetoggle";
 import { LuLogIn } from "react-icons/lu";
 import DropdownNavbar from "./DropdownNavbar";
 import { NavLinks } from "@/lib/Types";
+import { useSelector } from "react-redux";
 const Navlinks: NavLinks[] = [
   {
     name: "خانه",
@@ -26,6 +27,7 @@ const Navlinks: NavLinks[] = [
 ];
 function Navbar() {
   const location = useLocation();
+  const cart = useSelector((state) => state.cartStore);
 
   return (
     <nav
@@ -33,12 +35,18 @@ function Navbar() {
         location.pathname === "/" ? "text-gray-100 px-6" : ""
       } `}>
       {/* cart bascket and theme toggle */}
-      <div className="flex items-center gap-x-3">
-        <HiOutlineShoppingBag
-          className={`w-7 h-7 font-bold ${
-            location.pathname === "/" ? "text-white" : "text-black"
-          }  `}
-        />
+      <div className="flex items-center gap-x-3 relative">
+        <Link to="/cart" className="">
+          <HiOutlineShoppingBag
+            className={`w-9 h-9 font-bold ${
+              location.pathname === "/" ? "text-white" : "text-black"
+            }  `}
+          />
+        </Link>
+        <span className="absolute top-0 right-0 w-5 h-5 bg-primary rounded-full text-sm mx-auto">
+          {cart.numItemsIncart}
+        </span>
+
         {/* tiggle button */}
         <div className="hidden md:block">
           <Themetoggle />
