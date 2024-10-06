@@ -1,7 +1,8 @@
 import CartItemContainer from "@/components/main/CartItemContainer";
 import DeletCartBtn from "@/components/main/DeletCartBtn";
-import { Button } from "@/components/ui/button";
+
 import { Separator } from "@/components/ui/separator";
+import { formatAsDollor } from "@/lib/formatAsDollor";
 import { useSelector } from "react-redux";
 function Cart() {
   const cart = useSelector((state) => state.cartStore);
@@ -14,22 +15,22 @@ function Cart() {
         <div className="space-y-4 w-[30%] bg-primary flex flex-col px-4 py-6 rounded-lg ">
           <div className="flex items-center justify-between ">
             <p>قیمت محصولات</p>
-            <p>{cart.cartTotal}</p>
+            <p>{formatAsDollor(cart.cartTotal)}</p>
           </div>
           <Separator />
           <div className="flex items-center justify-between ">
             <p>هزینه ارسال</p>
-            <p>{cart.shipping}</p>
+            <p>{formatAsDollor(cart.shipping)}</p>
           </div>
           <Separator />
           <div className="flex items-center justify-between  ">
             <p>مالیات</p>
-            <p>{cart.tax.toFixed(0)}</p>
+            <p>{formatAsDollor(cart.tax.toFixed(0))}</p>
           </div>
           <Separator />
           <div className="flex items-center justify-between">
             <p className="font-semibold">هزینه کل</p>
-            <p className="font-semibold">{cart.orderTotal}</p>
+            <p className="font-semibold">{formatAsDollor(cart.orderTotal)}</p>
           </div>
         </div>
         <div className="flex-1">

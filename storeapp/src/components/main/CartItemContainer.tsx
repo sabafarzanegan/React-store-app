@@ -5,6 +5,7 @@ import { Button } from "../ui/button";
 import { TbTrashX } from "react-icons/tb";
 import { useDispatch } from "react-redux";
 import { removeItem } from "@/features/cart/cartSlice";
+import { formatAsDollor } from "@/lib/formatAsDollor";
 
 type cartprops = {
   item: cartItem;
@@ -14,6 +15,7 @@ function CartItemContainer({ item }: cartprops) {
   const removeHandler = () => {
     dispath(removeItem(item.cartId));
   };
+  const price = formatAsDollor(item.price);
   return (
     <Card className="flex flex-col gap-y-4 sm:flex-row flex-wrap p-6 mb-4">
       <div className="flex items-start justify-between gap-x-2 w-full ">
@@ -28,7 +30,7 @@ function CartItemContainer({ item }: cartprops) {
             style={{ backgroundColor: item.productColor }}></div>
         </div>
         <div>
-          <span className="font-semibold text-xl">${item.price}</span>
+          <span className="font-semibold text-xl">{price}</span>
         </div>
         <div>
           <Button onClick={removeHandler} variant="destructive">

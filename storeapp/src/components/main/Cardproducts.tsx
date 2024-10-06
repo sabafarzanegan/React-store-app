@@ -3,12 +3,14 @@ import { Product } from "@/lib/Types";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
+import { formatAsDollor } from "@/lib/formatAsDollor";
 type PropsProduct = {
   item: Product;
   layout?: "grid" | "list";
 };
 
 function Cardproducts({ item, layout }: PropsProduct) {
+  const price = formatAsDollor(item.attributes.price);
   return (
     <Link to={`/products/${item.id}`}>
       <div
@@ -44,7 +46,7 @@ function Cardproducts({ item, layout }: PropsProduct) {
           }`}>
           <div>
             <span className="text-lg font-semibold dark:text-white">
-              ${item.attributes.price}
+              {price}
             </span>
           </div>
           {layout === "grid" && (

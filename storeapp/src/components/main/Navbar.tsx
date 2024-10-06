@@ -59,7 +59,7 @@ function Navbar() {
           {Navlinks.map((link) => (
             <li>
               <Link
-                className={`px-2  text-white  ${
+                className={`px-2  dark:text-white  ${
                   location.pathname === link.path ? "text-primary" : ""
                 }`}
                 to={link.path}>

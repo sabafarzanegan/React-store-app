@@ -10,6 +10,7 @@ import { useDispatch, UseDispatch } from "react-redux";
 import { addItem } from "@/features/cart/cartSlice";
 import { useToast } from "@/hooks/use-toast";
 import CartButton from "@/components/ui/CartButton";
+import { formatAsDollor } from "@/lib/formatAsDollor";
 
 export const Loader: LoaderFunction = async ({
   params,
@@ -24,6 +25,7 @@ function SingleProduct() {
 
   const { data } = useLoaderData() as singleproduct;
   const { image, title, company, price, description, colors } = data.attributes;
+  const mainprice = formatAsDollor(price);
   const [productColor, setProductColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
   const cartProduct: cartItem = {
@@ -52,7 +54,7 @@ function SingleProduct() {
           {title}
         </h1>
         <h3 className="text-lg dark:text-secondary-foreground">{company}</h3>
-        <Badge className="py-2 text-white">${price}</Badge>
+        <Badge className="py-2 text-white">{mainprice}</Badge>
         <p className="dark:text-secondary-foreground">{description}</p>
         <SelectProductColor
           colors={colors}
