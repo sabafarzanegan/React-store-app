@@ -1,14 +1,17 @@
 import CartItemContainer from "@/components/main/CartItemContainer";
+import DeletCartBtn from "@/components/main/DeletCartBtn";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useSelector } from "react-redux";
 function Cart() {
   const cart = useSelector((state) => state.cartStore);
+
   return (
     <section>
       <h1 className="text-xl font-semibold">سبد خرید</h1>
       <Separator className="my-4" />
       <div className="flex items-start justify-between gap-x-6 ">
-        <div className="space-y-4 w-[30%] bg-primary flex flex-col px-4 py-6 ">
+        <div className="space-y-4 w-[30%] bg-primary flex flex-col px-4 py-6 rounded-lg ">
           <div className="flex items-center justify-between ">
             <p>قیمت محصولات</p>
             <p>{cart.cartTotal}</p>
@@ -21,7 +24,7 @@ function Cart() {
           <Separator />
           <div className="flex items-center justify-between  ">
             <p>مالیات</p>
-            <p>{cart.tax}</p>
+            <p>{cart.tax.toFixed(0)}</p>
           </div>
           <Separator />
           <div className="flex items-center justify-between">
@@ -30,9 +33,16 @@ function Cart() {
           </div>
         </div>
         <div className="flex-1">
+          {cart.cartItem.length == 0 && <h1>سبد خرید خالی است.</h1>}
+
           {cart.cartItem.map((item) => (
             <CartItemContainer item={item} />
           ))}
+          {cart.cartItem.length > 0 && (
+            <div>
+              <DeletCartBtn />
+            </div>
+          )}
         </div>
       </div>
     </section>
