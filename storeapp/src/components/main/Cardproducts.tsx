@@ -25,7 +25,7 @@ function Cardproducts({ item, layout }: PropsProduct) {
           />
         </div>
         <div>
-          <h3 className=" text-lg ">{item?.attributes.title}</h3>
+          <h3 className=" text-lg dark:text-white">{item?.attributes.title}</h3>
         </div>
         {layout === "grid" && (
           <div className="flex items-center gap-4">
@@ -43,7 +43,7 @@ function Cardproducts({ item, layout }: PropsProduct) {
             layout === "list" && "gap-x-2"
           }`}>
           <div>
-            <span className="text-lg font-semibold">
+            <span className="text-lg font-semibold dark:text-white">
               ${item.attributes.price}
             </span>
           </div>

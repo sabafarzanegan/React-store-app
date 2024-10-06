@@ -15,8 +15,16 @@ function Filter() {
     <Form className="rounded-md border border-secondary px-8 py-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center">
       {/* search */}
       <div className="mb-2">
-        <Label htmlFor="search">جستجو</Label>
-        <Input name="search" id="search" type="text" defaultValue={search} />
+        <Label className="dark:text-white" htmlFor="search">
+          جستجو
+        </Label>
+        <Input
+          placeholder="مثال:table"
+          name="search"
+          id="search"
+          type="text"
+          defaultValue={search}
+        />
       </div>
       {/* category */}
       <SelectForm
@@ -55,7 +63,10 @@ function Filter() {
         className="self-end mb-2"
         type="button"
         variant="outline">
-        <Link to="/products">باک کردن</Link>
+        <Link to="/products" className="dark:text-white">
+          {" "}
+          پاک کردن
+        </Link>
       </Button>
     </Form>
   );

@@ -38,12 +38,12 @@ function Navbar() {
       <div className="flex items-center gap-x-3 relative">
         <Link to="/cart" className="">
           <HiOutlineShoppingBag
-            className={`w-9 h-9 font-bold ${
+            className={`w-9 h-9 font-bold dark:text-white ${
               location.pathname === "/" ? "text-white" : "text-black"
             }  `}
           />
         </Link>
-        <span className="absolute top-0 right-0 w-5 h-5 bg-primary rounded-full text-sm mx-auto">
+        <span className="absolute top-0 right-0 w-5 h-5 bg-primary rounded-full text-sm mx-auto flex items-center justify-center">
           {cart.numItemsIncart}
         </span>
 
@@ -59,7 +59,7 @@ function Navbar() {
           {Navlinks.map((link) => (
             <li>
               <Link
-                className={`px-2 ${
+                className={`px-2  text-white  ${
                   location.pathname === link.path ? "text-primary" : ""
                 }`}
                 to={link.path}>

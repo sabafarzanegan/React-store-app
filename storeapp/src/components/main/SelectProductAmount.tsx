@@ -34,13 +34,20 @@ function SelectProductAmount({
         onValueChange={(value) => {
           setAmount(Number(value));
         }}>
-        <SelectTrigger className={cartItem ? "w-[75px]" : "w-[150px]"}>
-          <SelectValue placeholder={amount} />
+        <SelectTrigger
+          className={
+            cartItem ? "w-[75px] dark:text-white" : "w-[150px] dark:text-white"
+          }>
+          <SelectValue className="dark:text-white" placeholder={amount} />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="dark:text-white">
           {Array.from({ length: cartItem ? amount + 10 : 10 }, (_, index) => {
             const setValue = (index + 1).toString();
-            return <SelectItem value={setValue}>{setValue}</SelectItem>;
+            return (
+              <SelectItem className="dark:text-white" value={setValue}>
+                {setValue}
+              </SelectItem>
+            );
           })}
         </SelectContent>
       </Select>

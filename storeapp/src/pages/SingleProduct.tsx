@@ -48,10 +48,12 @@ function SingleProduct() {
         <img src={image} alt="" className="w-96 h-96 object-cover rounded-md" />
       </div>
       <div className="flex-1 space-y-6">
-        <h1 className="font-bold md:text-lg lg:text-xl">{title}</h1>
-        <h3 className="text-lg">{company}</h3>
+        <h1 className="font-bold md:text-lg lg:text-xl dark:text-secondary-foreground">
+          {title}
+        </h1>
+        <h3 className="text-lg dark:text-secondary-foreground">{company}</h3>
         <Badge className="py-2 text-white">${price}</Badge>
-        <p>{description}</p>
+        <p className="dark:text-secondary-foreground">{description}</p>
         <SelectProductColor
           colors={colors}
           currentColor={productColor}

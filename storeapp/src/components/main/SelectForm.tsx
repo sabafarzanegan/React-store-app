@@ -15,16 +15,16 @@ type InputProps = {
 function SelectForm({ lable, name, defaultValue, options }: InputProps) {
   return (
     <div>
-      <Label htmlFor={name} className="">
+      <Label htmlFor={name} className="dark:text-white">
         {lable || name}
       </Label>
       <Select name={name} defaultValue={defaultValue || options[0]}>
-        <SelectTrigger id={name}>
+        <SelectTrigger id={name} className="dark:text-white">
           <SelectValue />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="dark:text-white">
           {options.map((item) => (
-            <SelectItem key={item} value={item}>
+            <SelectItem className="dark:text-white" key={item} value={item}>
               {item}
             </SelectItem>
           ))}

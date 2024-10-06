@@ -15,8 +15,10 @@ function FormRange({ lable, name, defaultValue }: Rangepriceprops) {
   const [selectPrice, setSelectPrice] = useState(defaultPrice);
   return (
     <div>
-      <Label htmlFor={name}>{lable || name}</Label>
-      <span>{selectPrice}</span>
+      <Label className="dark:text-white" htmlFor={name}>
+        {lable || name}
+      </Label>
+      <span className="dark:text-white">{selectPrice}</span>
       <Slider
         id={name}
         name={name}
