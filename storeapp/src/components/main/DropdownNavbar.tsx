@@ -11,13 +11,16 @@ import {
 import { Button } from "../ui/button";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { NavLinks } from "../../lib/Types";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import Themetoggle from "./Themetoggle";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "@/features/user/userSlice";
 interface props {
   navlinks: NavLinks[];
 }
 
 function DropdownNavbar({ navlinks }: props) {
+  const dispath = useDispatch();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="block md:hidden" asChild>
@@ -37,6 +40,17 @@ function DropdownNavbar({ navlinks }: props) {
               </Link>
             </DropdownMenuItem>
           ))}
+          <DropdownMenuItem>
+            <DropdownMenuShortcut className=""></DropdownMenuShortcut>
+            <Button
+              className="w-full"
+              onClick={() => {
+                dispath(logoutUser());
+                redirect("/login");
+              }}>
+              خروج
+            </Button>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuLabel className="text-right">theme</DropdownMenuLabel>
         <DropdownMenuSeparator />

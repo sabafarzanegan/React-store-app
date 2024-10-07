@@ -16,6 +16,9 @@ import {
 import { Loader as LandingLoader } from "./pages/Landing";
 import { Loader as ProductLoader } from "./pages/Products";
 import { Loader as Singleproduct } from "./pages/SingleProduct";
+import { action as registerUser } from "./pages/Register";
+import { action as Loginuser } from "./pages/Login";
+import { store } from "./Store";
 
 function App() {
   const router = createBrowserRouter([
@@ -43,8 +46,8 @@ function App() {
         { path: "orders", element: <Orders /> },
       ],
     },
-    { path: "/login", element: <Login /> },
-    { path: "/register", element: <Register /> },
+    { path: "/login", element: <Login />, action: Loginuser(store) },
+    { path: "/register", element: <Register />, action: registerUser },
   ]);
   return (
     <>

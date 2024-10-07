@@ -31,7 +31,7 @@ function ProductContainer() {
             <LuLayoutList />
           </Button>
         </div>
-        <div className="text-lg font-semibold">
+        <div className="text-lg font-semibold dark:text-secondary-foreground">
           {meta.pagination.total} محصول
         </div>
       </div>
