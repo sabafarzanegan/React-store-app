@@ -75,3 +75,12 @@ export type cartState = {
   shipping: number;
   orderTotal: number;
 };
+
+export type Checkout = {
+  name: string;
+  address: string;
+  chargeTotal: string;
+  orderTotal: string;
+  cartItems: cartItem[];
+  numItemsInCart: number;
+};

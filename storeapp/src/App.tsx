@@ -18,6 +18,7 @@ import { Loader as ProductLoader } from "./pages/Products";
 import { Loader as Singleproduct } from "./pages/SingleProduct";
 import { action as registerUser } from "./pages/Register";
 import { action as Loginuser } from "./pages/Login";
+import { action as checkoutAction } from "./pages/Checkout";
 import { store } from "./Store";
 
 function App() {
@@ -42,7 +43,11 @@ function App() {
         { path: "about", element: <About /> },
         { path: "landing", element: <Landing /> },
         { path: "Error", element: <Error /> },
-        { path: "checkout", element: <Checkout /> },
+        {
+          path: "checkout",
+          element: <Checkout />,
+          action: checkoutAction(store),
+        },
         { path: "orders", element: <Orders /> },
       ],
     },

@@ -3,14 +3,14 @@ import { Product } from "@/lib/Types";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
-import { formatAsDollor } from "@/lib/formatAsDollor";
+import { formatAsDollar } from "@/lib/formatAsDollor";
 type PropsProduct = {
   item: Product;
   layout?: "grid" | "list";
 };
 
 function Cardproducts({ item, layout }: PropsProduct) {
-  const price = formatAsDollor(item.attributes.price);
+  const price = formatAsDollar(item.attributes.price);
   return (
     <Link to={`/products/${item.id}`}>
       <div

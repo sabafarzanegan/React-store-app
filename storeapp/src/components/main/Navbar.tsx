@@ -8,6 +8,7 @@ import DropdownNavbar from "./DropdownNavbar";
 import { NavLinks } from "@/lib/Types";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "@/features/user/userSlice";
+import { RootState } from "@/Store";
 const Navlinks: NavLinks[] = [
   {
     name: "خانه",
@@ -25,11 +26,11 @@ const Navlinks: NavLinks[] = [
 
 function Navbar() {
   const location = useLocation();
-  const cart = useSelector((state) => state.cartStore);
-  const user = useSelector((state) => state.userState);
+  const cart = useSelector((state: RootState) => state.cartStore);
+  const user = useSelector((state: RootState) => state.userState);
   const dispath = useDispatch();
   const restrictNav = user?.user?.username && [
-    { name: "بررسی", path: ".checkout" },
+    { name: "بررسی", path: "/checkout" },
     {
       name: "سفارشات",
       path: "/orders",
