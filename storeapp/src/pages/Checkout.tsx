@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { clearCart } from "@/features/cart/cartSlice";
 import { toast } from "@/hooks/use-toast";
 import { customFetch } from "@/lib/Customfetch";
-import { formatAsDollar, mainformatAsDollars } from "@/lib/formatAsDollor";
+import { mainformatAsDollars } from "@/lib/formatAsDollor";
 
 import { ReduxStore, RootState } from "@/Store";
 import { useSelector } from "react-redux";

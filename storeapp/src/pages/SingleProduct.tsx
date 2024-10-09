@@ -6,7 +6,7 @@ import { cartItem, singleproduct } from "@/lib/Types";
 import { useState } from "react";
 import { LoaderFunction, useLoaderData } from "react-router-dom";
 import { Mode } from "@/components/main/SelectProductAmount";
-import { useDispatch, UseDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addItem } from "@/features/cart/cartSlice";
 import { useToast } from "@/hooks/use-toast";
 import CartButton from "@/components/ui/CartButton";

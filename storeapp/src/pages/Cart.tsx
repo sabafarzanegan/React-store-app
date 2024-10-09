@@ -1,14 +1,13 @@
 import CardPrice from "@/components/main/CardPrice";
 import CartItemContainer from "@/components/main/CartItemContainer";
 import DeletCartBtn from "@/components/main/DeletCartBtn";
-import { Button } from "@/components/ui/button";
 
 import { Separator } from "@/components/ui/separator";
 
 import { cartItem } from "@/lib/Types";
 import { RootState } from "@/Store";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+
 function Cart() {
   const cart = useSelector((state: RootState) => state.cartStore);
 

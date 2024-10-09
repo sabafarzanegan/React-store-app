@@ -32,7 +32,7 @@ export const Loader =
   };
 
 function Orders() {
-  const { meta, data } = useLoaderData() as orderResponse;
+  const { data } = useLoaderData() as orderResponse;
   console.log(data);
 
   return (

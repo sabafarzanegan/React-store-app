@@ -12,9 +12,10 @@ import {
 } from "../ui/dropdown-menu";
 import { IoSettingsOutline } from "react-icons/io5";
 import { setTheme } from "@/features/theme/themeSlice";
+import { RootState } from "@/Store";
 
 function Themetoggle() {
-  const theme = useSelector((state) => state.themeState);
+  const theme = useSelector((state: RootState) => state.themeState);
   const dispath = useDispatch();
   console.log(theme);
 

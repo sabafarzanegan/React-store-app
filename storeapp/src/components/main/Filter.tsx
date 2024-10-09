@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 import { productRespobseWithParams } from "@/lib/Types";
 import SelectForm from "./SelectForm";
 import FormRange from "./FormRange";
-import Formcheck from "./Formcheck";
+
 function Filter() {
   const { meta, params } = useLoaderData() as productRespobseWithParams;
   const { search, category, company, price, shipping } = params;
@@ -49,12 +49,7 @@ function Filter() {
       />
       {/* price range */}
       <FormRange name="price" lable="price" defaultValue={price} />
-      {/* shipping check */}
-      {/* <Formcheck
-        name=" shipping"
-        lable="Free shipping"
-        defaultValue={shipping}
-      /> */}
+
       <Button size="sm" className="self-end mb-2" type="submit">
         جستجو
       </Button>
